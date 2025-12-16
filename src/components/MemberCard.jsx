@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Card, CardContent, Typography, Grid, Container } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  Grid,
+  Container,
+} from "@mui/material";
 
 import member1 from "../assets/images/member1.jpg";
 import member2 from "../assets/images/member2.jpg";
@@ -11,14 +18,14 @@ const members = [
     text:
       "राष्ट्रीय एकता देश को सशक्त एवं संगठित बनाती है भारत विविध संस्कृतियों का देश है जो समूचे विश्व में अपनी एक अलग पहचान रखता है।",
     name: "Dr. Darakshan Andrabi",
-    role: "Chairperson J&K Waqf Board (ministers of State J&K)",
+    role: "Chairperson J&K Waqf Board (Minister of State, J&K)",
   },
   {
     image: member2,
     text:
       "I am glad to know that National Crime Intelligence Agency, New Delhi proposes to organize its 03rd anniversary celebrations at New Delhi.",
     name: "Kavindra Singh",
-    role: "Ex. Deputy Chief Minister of Jammu Kashmir",
+    role: "Former Deputy Chief Minister, Jammu & Kashmir",
   },
   {
     image: member3,
@@ -31,81 +38,121 @@ const members = [
 
 export default function MemberCard() {
   return (
-    <Box sx={{ backgroundColor: "#f2f2f2", pb: 6 }}>
-      {/* Top blue line */}
-      <Box sx={{ height: "6px", backgroundColor: "#1f5ea8" }} />
-
+    <Box
+      sx={{
+        backgroundColor: "#f6f7f9",
+        py: { xs: 5, md: 7 },
+      }}
+    >
       {/* Title */}
       <Typography
         align="center"
-        sx={{ fontSize: 26, fontWeight: 600, my: 4 }}
+        sx={{
+          fontSize: { xs: 22, md: 26 },
+          fontWeight: 700,
+          color: "#1c2c4c",
+          mb: 4,
+        }}
       >
         Greetings
       </Typography>
 
-      {/* Centered container (IMPORTANT) */}
-     <Container maxWidth="lg">
-  <Grid container spacing={4} wrap="nowrap">
-    {members.map((item, index) => (
-      <Grid item xs={4} key={index}>
-        <Card
-          sx={{
-            backgroundColor: "#3f5367",
-            color: "#fff",
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-          }}
+      <Container maxWidth="xl">
+        <Grid
+          container
+          spacing={{ xs: 3, sm: 4, md: 4 }}
+          justifyContent="center"
         >
-          {/* Image */}
-          <Box sx={{ p: 2 }}>
-            <Box
+          {members.map((item, index) => (
+            <Grid
+              item
+              key={index}
+              xs={12}
+              sm={6}
+              md={4}
+              lg={4}
               sx={{
-                border: "6px solid #9fb0bb",
-                height: 260,
-                overflow: "hidden",
+                display: "flex",
               }}
             >
-              <img
-                src={item.image}
-                alt={item.name}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
+              <Card
+                sx={{
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  backgroundColor: "#ffffff",
+                  borderRadius: 2,
+                  boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+                  maxWidth: 380, // 👈 important for large screens
+                  mx: "auto",
                 }}
-              />
-            </Box>
-          </Box>
+              >
+                {/* Image */}
+                <Box sx={{ p: 2 }}>
+                  <Box
+                    sx={{
+                      height: { xs: 220, sm: 230, md: 240 },
+                      overflow: "hidden",
+                      borderRadius: 1.5,
+                    }}
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </Box>
+                </Box>
 
-          {/* Text */}
-          <CardContent sx={{ flexGrow: 1 }}>
-            <Typography fontSize={14} lineHeight={1.6}>
-              {item.text}
-            </Typography>
-          </CardContent>
+                {/* Text */}
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography
+                    sx={{
+                      fontSize: 14.5,
+                      lineHeight: 1.7,
+                      color: "#333",
+                    }}
+                  >
+                    {item.text}
+                  </Typography>
+                </CardContent>
 
-          {/* Footer */}
-          <Box
-            sx={{
-              backgroundColor: "#6f8894",
-              textAlign: "center",
-              py: 2,
-            }}
-          >
-            <Typography fontWeight="bold">
-              {item.name}
-            </Typography>
-            <Typography fontSize={13}>
-              {item.role}
-            </Typography>
-          </Box>
-        </Card>
-      </Grid>
-    ))}
-  </Grid>
-</Container>
-
+                {/* Footer */}
+                <Box
+                  sx={{
+                    borderTop: "1px solid #eee",
+                    textAlign: "center",
+                    px: 2,
+                    py: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontWeight: 700,
+                      fontSize: 15,
+                      color: "#1c2c4c",
+                    }}
+                  >
+                    {item.name}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: 13,
+                      color: "#555",
+                    }}
+                  >
+                    {item.role}
+                  </Typography>
+                </Box>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </Box>
   );
 }

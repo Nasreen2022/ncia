@@ -1,18 +1,18 @@
-import Header from "./components/Header"
-import Director from "./components/Director"
-import IntroSection from "./components/IntroSection"
-import MemberCard from "./components/MemberCard"
-import BlogCard from "./components/BlogCard"
-import Footer from "./components/Footer"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Department from "./pages/Department";
+
 export default function App() {
   return (
-    <>
-      <Header />
-      <IntroSection />
-      <Director />
-      <MemberCard />
-      <BlogCard />
-      <Footer />
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/departments" element={<Department />} />
+
+        {/* future pages */}
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
+    </BrowserRouter>
+  );
 }

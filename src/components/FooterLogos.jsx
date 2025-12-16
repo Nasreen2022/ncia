@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Container } from "@mui/material";
 
-// Logos imports
 import digitalIndia from "../assets/images/digital.jpg";
 import g20 from "../assets/images/g20.jpg";
 import swachh from "../assets/images/sb.jpg";
@@ -13,33 +12,46 @@ const logos = [digitalIndia, g20, swachh, msme, niti, arpan];
 
 export default function FooterLogos() {
   return (
-    <Box sx={{ backgroundColor: "#ffffff", py: 4, overflow: "hidden" }}>
-      <Container maxWidth="lg">
+    <Box
+      sx={{
+        backgroundColor: "#ffffff",
+        py: { xs: 3, md: 4 },
+        borderTop: "1px solid #eee",
+        overflow: "hidden",
+      }}
+    >
+      <Container maxWidth="xl">
         <Box
           sx={{
             display: "flex",
-            width: "max-content",
-            animation: "slide 30s linear infinite", // faster speed
+            alignItems: "center",
+            width: "fit-content",
+            animation: "logoScroll 35s linear infinite",
+            "&:hover": {
+              animationPlayState: "paused", // professional touch
+            },
           }}
         >
-          {/* Duplicate logos for seamless sliding */}
           {[...logos, ...logos].map((logo, index) => (
             <Box
               key={index}
               sx={{
-                flex: "0 0 16.66%", // 6 logos visible
+                width: { xs: 140, sm: 160, md: 180 },
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                px: 1, // minimal spacing
+                px: 2,
               }}
             >
-              <img
+              <Box
+                component="img"
                 src={logo}
-                alt="government logo"
-                style={{
-                  height: 55, // previous logo size
+                alt="Government Initiative Logo"
+                sx={{
+                  height: { xs: 40, sm: 45, md: 50 },
                   objectFit: "contain",
+                  filter: "grayscale(20%)",
+                  opacity: 0.9,
                 }}
               />
             </Box>
@@ -47,10 +59,10 @@ export default function FooterLogos() {
         </Box>
       </Container>
 
-      {/* CSS animation */}
+      {/* Animation */}
       <style>
         {`
-          @keyframes slide {
+          @keyframes logoScroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
           }

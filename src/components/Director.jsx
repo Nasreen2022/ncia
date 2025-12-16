@@ -1,76 +1,114 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
-
-// Director image
-import directorImage from "../assets/images/director.jpg"; // change path accordingly
+import directorImage from "../assets/images/director.jpg";
 
 export default function Director() {
   return (
-    <Box sx={{ py: 8, backgroundColor: "#f9f9f9" }}>
-      <Container maxWidth="md">
-        
-        {/* First Row: Image */}
+    <Box
+      sx={{
+        py: { xs: 4, md: 6 },
+        backgroundColor: "#f6f7f9",
+      }}
+    >
+      <Container maxWidth="lg">
         <Box
           sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            mb: 6, // space below image
+            display: { xs: "flex", md: "grid" },
+            flexDirection: { xs: "column", md: "unset" },
+            gridTemplateColumns: { md: "260px 1fr" },
+            gap: { xs: 3, md: 4 },
+            alignItems: "flex-start",
           }}
         >
+          {/* LEFT: IMAGE */}
           <Box
-            component="img"
-            src={directorImage}
-            alt="Director"
             sx={{
-              width: 250,
-              height: 250,
-              objectFit: 'cover',
-              borderRadius: 2,
-              boxShadow: 3,
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: { xs: "center", md: "flex-start" }, // ✅ FIX
             }}
-          />
-        </Box>
-
-        {/* Second Row: Director Message */}
-        <Box
-          sx={{
-            backgroundColor: "#fff",
-            p: 4,
-            borderRadius: 2,
-            boxShadow: 2,
-          }}
-        >
-          <Typography
-            variant="h5"
-            sx={{ fontWeight: 600, mb: 2, textAlign: 'center' }}
           >
-            Director Message
-          </Typography>
+            <Box
+              component="img"
+              src={directorImage}
+              alt="Director General - NCFB"
+              sx={{
+                width: 220,
+                height: 260,
+                objectFit: "cover",
+                borderRadius: 1.5,
+                border: "3px solid #fff",
+                boxShadow: "0 6px 16px rgba(0,0,0,0.15)",
+                display: "block",
+              }}
+            />
 
-          <Typography
-            variant="body1"
-            sx={{ fontSize: 16, lineHeight: 1.8, whiteSpace: 'pre-line' }}
-          >
+            <Typography
+              sx={{
+                mt: 1.5,
+                fontWeight: 700,
+                fontSize: 15.5,
+                color: "#1c2c4c",
+                textAlign: { xs: "center", md: "left" }, // ✅
+              }}
+            >
+              Mr. Sumit Chaudhary
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: 13.5,
+                color: "#555",
+                textAlign: { xs: "center", md: "left" }, // ✅
+              }}
+            >
+              Director General, NCFB
+            </Typography>
+          </Box>
+
+          {/* RIGHT: MESSAGE */}
+          <Box sx={{ width: "100%" }}>
+            <Typography
+              sx={{
+                fontSize: { xs: 18, md: 22 },
+                fontWeight: 700,
+                color: "#1c2c4c",
+                mb: 1.5,
+                textAlign: { xs: "center", md: "left" },
+              }}
+            >
+              Director General’s Message
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: 15,
+                lineHeight: 1.75,
+                color: "#333",
+                whiteSpace: "pre-line",
+                textAlign: "left",
+              }}
+            >
 {`Dear NCFB Officers,
 
-Welcome to the National Crime and Forensic Bureau (NCFB) family. We are honored to have you join us in our mission to bring about meaningful social change and reform within our society.
+Welcome to the National Crime and Forensic Bureau (NCFB). It gives me great pride to welcome you into an organization committed to justice, integrity, and national responsibility.
 
-NCFB was founded with a singular vision — to address and eliminate the deep-rooted issues of inequality, injustice, crime, and corruption that continue to hinder national progress. As responsible citizens of India, we the people of NCFB take our commitment seriously toward building a just, inclusive, and empowered society.
+NCFB was established with a clear mandate — to combat crime, corruption, and systemic injustice that hinder the progress of our nation. Our work is guided by constitutional values, ethical conduct, and an unwavering commitment to transparency and accountability.
 
-Our role is not only to identify and combat the various social evils that affect our communities, but also to promote social security, civic education, and awareness of fundamental rights. We aim to empower every citizen to rise above challenges and claim their rightful place in the democratic structure of our country.
+Beyond investigation and enforcement, our responsibility lies in promoting civic awareness, safeguarding fundamental rights, and ensuring equal access to justice for every citizen of India.
 
-We see ourselves as warriors of social justice — dedicated to ensuring every Indian has equal access to welfare schemes, legal rights, and social protection, regardless of caste, creed, or economic status. NCFB is a powerful movement toward a crime-free, corruption-free, and socially responsible India.
+Together, through discipline, dedication, and collective resolve, we will continue to strengthen institutions, protect society, and contribute to a safer and more just nation.
 
-Our journey is guided by the wisdom of ethical legal advisors, the integrity of government and NCFB officers, the vigilance of investigative journalists, and the unwavering dedication of social workers and committed citizens like you. Together, we form a united force striving for national welfare and justice.
+I look forward to your commitment and service to this mission.
 
-We welcome you with pride, purpose, and hope. Let's move forward with courage, dedication, and relentless spirit.
+With regards,
 
-With Regards and Solidarity,  
 Mr. Sumit Chaudhary  
-Director General`}
-          </Typography>
+Director General, NCFB`}
+            </Typography>
+          </Box>
         </Box>
-
       </Container>
     </Box>
   );
