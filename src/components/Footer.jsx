@@ -141,41 +141,49 @@ export default function Footer() {
           >
             <Grid item xs={12} md={8}>
               <Typography sx={{ color: "#bfc6d1", fontSize: 14 }}>
-                © 2025 National Crime Intelligence Agency. All Rights Reserved.
+                © 2026  Welcome to the NCFB Foundation. All Rights Reserved.
               </Typography>
             </Grid>
 
             <Grid
-              item
-              xs={12}
-              md={4}
-              textAlign={{ xs: "left", md: "right" }}
-            >
-              <IconButton sx={{ color: "#fff" }}>
-                <FacebookIcon />
-              </IconButton>
-              <IconButton sx={{ color: "#fff" }}>
-                <TwitterIcon />
-              </IconButton>
-              <IconButton sx={{ color: "#fff" }}>
-                <LinkedInIcon />
-              </IconButton>
-              <IconButton sx={{ color: "#fff" }}>
-                <YouTubeIcon />
-              </IconButton>
+  item
+  xs={12}
+  md={4}
+  textAlign={{ xs: "left", md: "right" }}
+>
+  <IconButton
+    component="a"
+    href="https://www.facebook.com/share/1C3wvrk6wx/"
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{ color: "#fff" }}
+  >
+    <FacebookIcon />
+  </IconButton>
 
-              <IconButton
-                onClick={scrollToTop}
-                sx={{
-                  backgroundColor: "#d71920",
-                  color: "#fff",
-                  ml: 2,
-                  "&:hover": { backgroundColor: "#b9151b" },
-                }}
-              >
-                <KeyboardArrowUpIcon />
-              </IconButton>
-            </Grid>
+  <IconButton
+    component="a"
+    href="https://x.com/mediacellncfb?t=M8fGC3sIWZVJENmRl6cvzQ&s=08"
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{ color: "#fff" }}
+  >
+    <TwitterIcon />
+  </IconButton>
+
+  <IconButton
+    onClick={scrollToTop}
+    sx={{
+      backgroundColor: "#d71920",
+      color: "#fff",
+      ml: 2,
+      "&:hover": { backgroundColor: "#b9151b" },
+    }}
+  >
+    <KeyboardArrowUpIcon />
+  </IconButton>
+</Grid>
+
           </Grid>
         </Container>
       </Box>

@@ -20,7 +20,7 @@ export default function IntroSection() {
             color: "#1c2c4c",
           }}
         >
-          Welcome to the National Crime and Forensic Bureau (NCFB)
+          Welcome to the NCFB Foundation
         </Typography>
 
         {/* Tagline */}

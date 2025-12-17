@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       <IntroSection />
       <Director />
-      <MemberCard />
+      {/* <MemberCard /> */}
       <BlogCard />
       <Footer />
     </>

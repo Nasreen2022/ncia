@@ -1,17 +1,18 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import nciaLogo from "../assets/images/nciaLogo.jpg";
+import nciaLogo from "../assets/images/ncfblogonew.png";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Act & Rules", path: "/act-rules" },
+    // { name: "About Us", path: "/about" },
+    { name: "Administrative Authority", path: "/administrative-authority" },
+    { name: "Legal Team", path: "/legal-team" },
     { name: "Department", path: "/departments" },
-    { name: "Media", path: "/media" },
-    { name: "Donation", path: "/donation" },
+    // { name: "Media", path: "/media" },
+    // { name: "Donation", path: "/donation" },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -32,7 +33,7 @@ export default function Header() {
 
             {/* LOGO */}
             <Link to="/" className="flex items-center gap-3">
-              <img src={nciaLogo} alt="NCIA Logo" className="h-14 w-auto" />
+              <img src={nciaLogo} alt="NCIA Logo" className="h-16 w-auto" />
             </Link>
 
             {/* DESKTOP MENU */}
@@ -56,7 +57,7 @@ export default function Header() {
             </nav>
 
             {/* ACTION BUTTONS */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* <div className="hidden lg:flex items-center gap-3">
               <Link
                 to="/registration"
                 className="px-5 py-2 rounded-md bg-green-600 hover:bg-green-700 text-white font-semibold transition"
@@ -69,7 +70,7 @@ export default function Header() {
               >
                 Verification
               </Link>
-            </div>
+            </div> */}
 
             {/* MOBILE MENU BUTTON */}
             <button
@@ -108,7 +109,7 @@ export default function Header() {
               ))}
             </ul>
 
-            <div className="flex flex-col gap-3 p-4">
+            {/* <div className="flex flex-col gap-3 p-4">
               <Link
                 to="/registration"
                 onClick={() => setMenuOpen(false)}
@@ -123,7 +124,7 @@ export default function Header() {
               >
                 Verification
               </Link>
-            </div>
+            </div> */}
           </nav>
         </div>
       </div>

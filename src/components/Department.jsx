@@ -25,7 +25,7 @@ const departments = [
   {
     title: "Operations and Intelligence Department",
     purpose:
-      "Core operational wing of NCIA. Coordinates intelligence gathering, research, and investigation. Maintains crime databases, case records, and liaises with law enforcement agencies with due authorization.",
+      "Core operational wing of NCFB Foundation. Coordinates intelligence gathering, research, and investigation. Maintains crime databases, case records, and liaises with law enforcement agencies with due authorization.",
   },
   {
     title: "Public Relations and Media Department",
@@ -94,7 +94,7 @@ export default function Department() {
               textAlign: "center",
             }}
           >
-            Departments of National Crime Intelligence Agency
+            Department of NCFB Foundation
           </Typography>
         </Container>
       </Box>
